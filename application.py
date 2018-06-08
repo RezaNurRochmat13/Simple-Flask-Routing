@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -21,3 +21,7 @@ def about(username):
 @app.route("/contact/<username>")
 def contact(username):
     return 'Welcome in contact pages %s' % username
+
+@app.route("/render")
+def test():
+    return render_template('index.html')
